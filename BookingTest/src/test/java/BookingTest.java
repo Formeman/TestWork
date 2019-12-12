@@ -48,10 +48,9 @@ public class BookingTest {
         WebDriverSingleton.kill();
     }
 
-    @Parameters("place")
+    @Parameters({"place","needResultNumber"})
     @Test
-    public void firstCase(String place) {
-        int needResultNumber = 3;
+    public void firstCase(String place,int needResultNumber) {
         mainPage.goToRentCarsPage();
         rentCarsPage.selectPlaceOnNextWeekend(place);
 
