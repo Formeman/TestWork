@@ -27,8 +27,8 @@ public class BookingTest {
         driver = WebDriverSingleton.create();
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(Long.parseLong(ConfigUtil.getConfig("pageLoadTimeout")), TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Long.parseLong(ConfigUtil.getConfig("implicitlyWait")), TimeUnit.SECONDS);
 
         driver.get(ConfigUtil.getConfig("url"));
 
