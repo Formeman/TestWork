@@ -28,6 +28,9 @@ public class RentCarsPage extends BasePage {
     @FindBy(xpath = "//td[contains(@class,'weekend ')]")
     List<WebElement> nextWeekendList;
 
+    @FindBy(xpath = "//td[not(contains(@class,'disabled')) and contains(@class,'weekend')]")
+    WebElement startOfWeekend;
+
     @FindBy(xpath = "//div[contains(@class,'_checkin')]")
     WebElement selectDateStartButton;
 
@@ -57,7 +60,7 @@ public class RentCarsPage extends BasePage {
     }
 
     private void selectNextWeekend() {
-        nextWeekendList.get(0).click();
+        startOfWeekend.click();
         nextWeekendList.get(nextWeekendList.size()-1).click();
     }
 
